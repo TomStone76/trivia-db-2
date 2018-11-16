@@ -1,8 +1,8 @@
 var db = require("../models");
 
 module.exports = function (app) {
-    app.get("/api/questions/:id", function (req, res) {
-        db.Questions.findOne({
+    app.get("/api/questions", function (req, res) {
+        db.Questions.findAll({
             where: {
                 id: req.params.id
             }

@@ -40,8 +40,9 @@
                     wellSection.attr("id", "question-well-" + i);
                     $("#well-section").append(wellSection);
                     $("#question-well-" + i).append("<h2>" + data[i].question_text + "</h2>");
-                    console.log(data[i].question_text)
-                    
+                    $("#question-well-" + i). append("<input type='radio' id='true'>True" + "<input type='radio' id='false'>False")
+                    console.log(data[i].question_text);
+
                 }
             });
         });

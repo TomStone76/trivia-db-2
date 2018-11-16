@@ -8,7 +8,7 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"));
+app.use(express.static("./public/trivia.js"));
 
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);

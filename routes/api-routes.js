@@ -1,13 +1,14 @@
-var db = require("../models");
+var db = require("../models/index");
 
 module.exports = function (app) {
+
     app.get("/api/questions", function (req, res) {
-        db.Questions.findAll({
-            where: {
-                id: req.params.id
-            }
-        });
+        db.Questions.findAll({})
+            .then(function (dbQuestion) {
+                res.json(dbQuestion)
+            })
     });
+
     app.get("/api/users/:id", function (req, res) {
         db.Users.findOne({
             where: {

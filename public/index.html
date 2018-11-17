@@ -53,13 +53,23 @@
             });
         });
 
+        var correct = 0;
+        var incorrect = 0;
+
         $("#submit-button").on("click", function (event) {
-
+            
             $(".well").forEach(function(answer) {
-                $(this).find()e
-            })
+                var checked = ($("input[type='radio']:checked").val());
+                if (checked === data-correct) {
+                    console.log("Correct!");
+                    correct += 1;
+                } else if (checked !== data-correct) {
+                    console.log("Incorrect!");
+                    incorrect += 1;
+                }
+            });
 
-        })
+        });
     });
 </script>
 

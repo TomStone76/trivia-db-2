@@ -1,26 +1,26 @@
 {
     "development": {
-      "username": //your username here,
-      "password": //your password here,
+      "username": "root",
+      "password": "root",
       "database": "qanda_db",
       "host": "127.0.0.1",
-      "port": //your port here,
+      "port": 8889,
       "dialect": "mysql"
     },
     "test": {
-      "username": //your username here,
-      "password": //your password here,
+      "username": "root",
+      "password": "root",
       "database": "qanda_db",
       "host": "127.0.0.1",
-      "port": //your port here,
+      "port": 8889,
       "dialect": "mysql"
     },
     "production": {
-      "username": //your username here,
-      "password": //your password here,
+      "username": "root",
+      "password": "root",
       "database": "qanda_db",
       "host": "127.0.0.1",
-      "port": //your port here,
+      "port": 8889,
       "dialect": "mysql"
     }
   }

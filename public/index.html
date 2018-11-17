@@ -19,6 +19,8 @@
         </div>
         <div class="card-body" id="well-section">
 
+        </div>
+        <div class="card-body" id="submit-section">
 
         </div>
 
@@ -30,7 +32,7 @@
     $(function () {
         $("#qGen").on("click", function (event) {
             event.preventDefault();
-
+            $("#submit-section").append("<button type='button' class='btn btn-secondary btn-lg' id='submit-button'>Submit Answers");
             $.get("/api/questions", function (data) {
 
                 for (var i = 0; i < data.length; i++) {
@@ -40,12 +42,20 @@
                     wellSection.attr("id", "question-well-" + i);
                     $("#well-section").append(wellSection);
                     $("#question-well-" + i).append("<h2>" + data[i].question_text + "</h2>");
-                    $("#question-well-" + i). append("<input type='radio' id='true'>True" + "<input type='radio' id='false'>False")
+                    wellSection.attr("data-correct", data[i].answer_key.toString());
+                    $("#question-well-" + i).append("<input type='radio' id='true' name='question-" + i + "'>True" + "<input type='radio' id='false' name='question-" + i + "'>False");
                     console.log(data[i].question_text);
+                    console.log(data[i].answer_key);
+                    console.log(wellSection.data("correct"))
 
                 }
             });
         });
+
+        // $("#submit-button").on("click", function (event) {
+
+
+        // }
     });
 </script>
 

@@ -32,6 +32,7 @@
     $(function () {
         $("#qGen").on("click", function (event) {
             event.preventDefault();
+        
             $("#submit-section").append("<button type='button' class='btn btn-secondary btn-lg' id='submit-button'>Submit Answers");
             $.get("/api/questions", function (data) {
 
@@ -44,18 +45,21 @@
                     $("#question-well-" + i).append("<h2>" + data[i].question_text + "</h2>");
                     wellSection.attr("data-correct", data[i].answer_key.toString());
                     $("#question-well-" + i).append("<input type='radio' id='true' name='question-" + i + "'>True" + "<input type='radio' id='false' name='question-" + i + "'>False");
-                    console.log(data[i].question_text);
-                    console.log(data[i].answer_key);
-                    console.log(wellSection.data("correct"))
+                    // console.log(data[i].question_text);
+                    // console.log(data[i].answer_key);
+                    // console.log(wellSection.data("correct"))
 
                 }
             });
         });
 
-        // $("#submit-button").on("click", function (event) {
+        $("#submit-button").on("click", function (event) {
 
+            $(".well").forEach(function(answer) {
+                $(this).find()e
+            })
 
-        // }
+        })
     });
 </script>
 

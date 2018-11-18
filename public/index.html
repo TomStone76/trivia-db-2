@@ -67,7 +67,18 @@
                     console.log(incorrect);
                 }
             });
+            trackAnswers();
         });
+
+        function trackAnswers(answer) {
+            $.ajax({
+                method: "PUT",
+                url: "/api/posts",
+                data: answer
+            })
+        }
+
+
     });
 </script>
 

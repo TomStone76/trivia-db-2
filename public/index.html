@@ -63,7 +63,7 @@
                 var checked = $(this).find("input[type='radio']:checked").val();
                 
                 console.log(checked)
-                var correctAnswer = $(this).data("correct");
+                var correctAnswer = $(this).data("data-correct");
                 if (checked === correctAnswer) {
                     console.log("Correct!");
                     correct += 1;

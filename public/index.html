@@ -44,7 +44,7 @@
                     $("#well-section").append(wellSection);
                     $("#question-well-" + i).append("<h2>" + data[i].question_text + "</h2>");
                     wellSection.attr("data-correct", data[i].answer_key.toString());
-                    $("#question-well-" + i).append("<input type='radio' id='true' name='question-" + i + "'>True" + "<input type='radio' id='false' name='question-" + i + "'>False");
+                    $("#question-well-" + i).append("<input type='radio' id='true' value='true' name='question-" + i + "'>True" + "<input type='radio' id='false' value='false' name='question-" + i + "'>False");
                     // console.log(data[i].question_text);
                     // console.log(data[i].answer_key);
                     // console.log(wellSection.data("correct"))
@@ -61,6 +61,7 @@
             
             $(".well").each(function(answer) {
                 var checked = $(this).find("input[type='radio']:checked").val();
+                
                 console.log(checked)
                 var correctAnswer = $(this).data("correct");
                 if (checked === correctAnswer) {

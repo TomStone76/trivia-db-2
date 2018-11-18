@@ -46,10 +46,6 @@
                     wellSection.attr("data-correct", data[i].answer_key.toString());
                     $("#question-well-" + i).append("<input type='radio' id='true' value='true' name='question-" + i + "'>True" + 
                     "<input type='radio' id='false' value='false' name='question-" + i + "'>False");
-                    // console.log(data[i].question_text);
-                    // console.log(data[i].answer_key);
-                    // console.log(wellSection.data("correct"))
-
                 }
             });
         });
@@ -58,14 +54,9 @@
         var incorrect = 0;
 
         $("#submit-section").on("click", "#submit-button", function (event) {
-            console.log("working");
-            
             $(".well").each(function(answer) {
                 var checked = $(this).find("input[type='radio']:checked").val();
-                
-                console.log(checked)
                 var correctAnswer = $(this).attr("data-correct");
-                console.log(correctAnswer);
                 if (checked === correctAnswer) {
                     console.log("Correct!");
                     correct += 1;

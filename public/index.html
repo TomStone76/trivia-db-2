@@ -37,7 +37,6 @@
             $.get("/api/questions", function (data) {
 
                 for (var i = 0; i < data.length; i++) {
-                
                     var wellSection = $("<div>");
                     wellSection.addClass("well");
                     wellSection.attr("id", "question-well-" + i);
@@ -67,18 +66,25 @@
                     console.log(incorrect);
                 }
             });
-            trackAnswers();
+            trackRightAnswers();
+            tractWrongAnswers();
         });
 
-        function trackAnswers(answer) {
+        function trackRightAnswers(correct) {
             $.ajax({
                 method: "PUT",
-                url: "/api/posts",
-                data: answer
-            })
+                url: "/api/correct",
+                data: correct
+            });
         }
 
-
+        function trackWrongAnswers(incorrect) {
+            $.ajax({
+                method: "PUT",
+                url: "/api/incorrect",
+                data: incorrect
+            });
+        }
     });
 </script>
 

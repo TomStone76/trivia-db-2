@@ -56,7 +56,7 @@
         var correct = 0;
         var incorrect = 0;
 
-        $("#submit-button").on("submit", function (event) {
+        $("#submit-section").on("click", "#submit-button", function (event) {
             console.log("working");
             
             $(".well").each(function(answer) {
@@ -67,7 +67,7 @@
                     console.log("Correct!");
                     correct += 1;
                     console.log(correct);
-                } else if (checked !== data-correct) {
+                } else if (checked !== correctAnswer) {
                     console.log("Incorrect!");
                     incorrect += 1;
                     console.log(incorrect);

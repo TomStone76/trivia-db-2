@@ -9,7 +9,7 @@ module.exports = function (app) {
             })
     });
 
-    app.get("/api/users/:id", function (req, res) {
+    app.get("/api/users/:user_id", function (req, res) {
         db.Users.findOne({
             where: {
                 id: req.params.id
@@ -19,7 +19,7 @@ module.exports = function (app) {
     app.put("/api/correct", function (req, res) {
         db.Users.update(req.body, {
             where: {
-                id: req.body.id,
+                id: req.body.user_id,
                 correct: req.body.correct
             }
         })
@@ -27,7 +27,7 @@ module.exports = function (app) {
     app.put("/api/incorrect", function (req, res) {
         db.Users.update(req.body, {
             where: {
-                id: req.body.id,
+                id: req.body.user_id,
                 incorrect: req.body.incorrect
             }
         });

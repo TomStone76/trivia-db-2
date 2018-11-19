@@ -66,25 +66,38 @@
                     console.log(incorrect);
                 }
             });
-            trackRightAnswers();
-            tractWrongAnswers();
+            // trackRightAnswers();
+            // trackWrongAnswers();
         });
 
-        function trackRightAnswers(correct) {
-            $.ajax({
-                method: "PUT",
-                url: "/api/correct",
-                data: correct
-            });
-        }
+        $.get("/api/users", function(data) {
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i].user_id);
+                console.log(data[i].username);
+                console.log(data[i].hatch);
+                console.log(data[i].correct);
+                console.log(data[i].incorrect);
+            }
+        });
 
-        function trackWrongAnswers(incorrect) {
-            $.ajax({
-                method: "PUT",
-                url: "/api/incorrect",
-                data: incorrect
-            });
-        }
+        // function trackRightAnswers(data) {
+        //     console.log("first function called");
+        //     $.ajax({
+        //         method: "PUT",
+        //         url: "/api/correct",
+        //         data: correct
+        //     });
+        //     console.log(data.correct);
+        // }
+
+        // function trackWrongAnswers(data) {
+        //     console.log("second function called");
+        //     $.ajax({
+        //         method: "PUT",
+        //         url: "/api/incorrect",
+        //         data: incorrect
+        //     });
+        // }
     });
 </script>
 

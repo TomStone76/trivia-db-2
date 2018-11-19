@@ -12,7 +12,7 @@ module.exports = function (app) {
     app.get("/api/users/:user_id", function (req, res) {
         db.Users.findOne({
             where: {
-                id: req.params.id
+                id: req.params.user_id
             }
         });
     });

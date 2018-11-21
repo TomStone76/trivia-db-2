@@ -66,11 +66,7 @@
                     console.log(incorrect);
                 }
             });
-            // trackRightAnswers();
-            // trackWrongAnswers();
-        });
-
-        $.get("/api/users", function(data) {
+            $.get("/api/users", function(data) {
             for (var i = 0; i < data.length; i++) {
                 console.log(data[i].user_id);
                 console.log(data[i].username);
@@ -78,6 +74,9 @@
                 console.log(data[i].correct);
                 console.log(data[i].incorrect);
             }
+        });
+            // trackRightAnswers();
+            // trackWrongAnswers();
         });
 
         // function trackRightAnswers(data) {

@@ -5,16 +5,15 @@ module.exports = function (app) {
     app.get("/api/questions", function (req, res) {
         db.Questions.findAll({})
             .then(function (dbQuestion) {
-                res.json(dbQuestion)
+                res.json(dbQuestion);
             })
     });
 
-    app.get("/api/users/:user_id", function (req, res) {
-        db.Users.findOne({
-            where: {
-                id: req.params.user_id
-            }
-        });
+    app.get("/api/users", function (req, res) {
+        db.Users.findAll({})
+            .then(function (dbUser) {
+                res.json(dbUser);
+            })
     });
     app.put("/api/correct", function (req, res) {
         db.Users.update(req.body, {

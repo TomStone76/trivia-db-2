@@ -15,6 +15,7 @@ module.exports = function (app) {
                 res.json(dbUser);
             })
     });
+    
     app.put("/api/correct", function (req, res) {
         db.Users.update(req.body, {
             where: {
